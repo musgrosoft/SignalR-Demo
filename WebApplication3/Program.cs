@@ -24,19 +24,19 @@ builder.Services.AddHangfireServer(option =>
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.Services.AddSignalR(
-    hubOptions =>
-    {
-        hubOptions.KeepAliveInterval = TimeSpan.FromMinutes(1);
-        hubOptions.ClientTimeoutInterval = TimeSpan.FromMinutes(1);
-    }
+//builder.Services.AddSignalR(
+//    hubOptions =>
+//    {
+//        hubOptions.KeepAliveInterval = TimeSpan.FromMinutes(1);
+//        hubOptions.ClientTimeoutInterval = TimeSpan.FromMinutes(1);
+//    }
 
-).AddAzureSignalR();
+//).AddAzureSignalR();
 
 //builder.Services.AddHostedService<TimedHostedService>();
 
-builder.Services.AddScoped<IMyHubHelper, MyHubHelper>();
-builder.Services.AddScoped<ICoverLetterGenerator, CoverLetterGenerator>();
+//builder.Services.AddScoped<IMyHubHelper, MyHubHelper>();
+//builder.Services.AddScoped<ICoverLetterGenerator, CoverLetterGenerator>();
 
 var app = builder.Build();
 
@@ -51,7 +51,7 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
-app.MapHub<ChatSampleHub>("/chat");
+//app.MapHub<ChatSampleHub>("/chat");
 
 app.UseRouting();
 
